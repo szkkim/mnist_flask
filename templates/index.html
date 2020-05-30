@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block title %}MNIST Image Predictor{% endblock %}
+
+{% block page_content %}
+<div class="page-header">
+    <h2>MNIST Image Predictor</h2>
+</div>
+<p>Upload an image of a number between 0-9</p>
+      <form action = "http://localhost:8080/uploader" method = "POST"
+         enctype = "multipart/form-data">
+         <input type = "file" name = "file" />
+         <input type = "submit"/>
+      </form>
+{% endblock %}
+
+
+
+
+
