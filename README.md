@@ -5,6 +5,7 @@ This is a flask solution for implementing a MNIST image classifier using Convolu
 
 Setup
 conda env create -f environment.yaml
+mkdir upload
 
 Run
 conda activate mnist
