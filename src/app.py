@@ -58,9 +58,16 @@ def internal_server_error(e):
 
 @app.route('/success', methods=['GET', 'POST'])
 def success():
-    session.pop('_flashes', None)
-    rec = request.args['rec']
-    return render_template('rec.html', rec=rec)
+    if request.method == 'POST':
+        if request.form['submit_button'] == 'yes':
+            flash('woo, got it right', 'success')
+        elif request.form['submit_button'] == 'no':
+            flash('aww, next time', 'danger')
+        return render_template('index.html')
+    else:
+        session.pop('_flashes', None)
+        rec = request.args['rec']
+        return render_template('rec.html', rec=rec)
 
 
 @app.route('/', methods=['GET', 'POST'])

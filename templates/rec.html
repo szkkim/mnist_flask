@@ -8,9 +8,9 @@
     <h1>MNIST Result</h1>
 </div>
 <h3>Is your number {{ rec }}?</h3>
-      <form action = "http://localhost:8080/" method = "POST"
+      <form action = "http://localhost:8080/success" method = "POST"
          enctype = "multipart/form-data">
-         <button type="submit" class="btn btn-primary" value="yes">Yes</button>
-          <button type="submit" class="btn btn-primary" value="no">No</button>
+         <button type="submit" name="submit_button" class="btn btn-primary" value="yes">Yes</button>
+          <button type="submit" name="submit_button" class="btn btn-primary" value="no">No</button>
       </form>
 {% endblock %}
